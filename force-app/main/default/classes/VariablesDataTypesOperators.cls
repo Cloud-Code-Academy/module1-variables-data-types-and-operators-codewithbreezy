@@ -93,8 +93,11 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the number is even, False otherwise.
      */
     public static Boolean isEven(Integer num) {
-        return null; // Replace null with the variable you used to store the result
-    }
+        if (num == null) {
+            return false;
+        }
+        return Math.mod(num,2) == 0; // Replace null with the variable you used to store the result
+    } 
 
     /**
      * Question 6
@@ -169,10 +172,14 @@ public with sharing class VariablesDataTypesOperators {
      * @param minutes The number of minutes.
      * @return The number of milliseconds equivalent to the given number of minutes.
      */
-    Integer MILLISECONDS_PER_MINUTE = 60000; // Make this value a constant
+    private static final Integer MILLISECONDS_PER_MINUTE = 60000; // Make this value a constant
+
     public static Integer convertMinutesToMilliseconds(Integer minutes) {
-        Integer milliseconds;
-        return milliseconds; // Replace null with the variable you used to store the result
+        if (minutes < 0) {
+            return null;
+        }
+
+        return minutes * MILLISECONDS_PER_MINUTE; // Replace null with the variable you used to store the result
     }    
 
     /**
